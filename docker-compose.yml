@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  agency:
+    container_name: agency
+    hostname: agency
+    image: agency
+    tty: true
+    build:
+      context: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./app:/code/app
+      - /code/app/node_modules
