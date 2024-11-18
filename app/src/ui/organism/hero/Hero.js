@@ -2,7 +2,7 @@ import Image from "../../atoms/image/Image";
 import BlackArrow from "../../../assets/img/black-arrow.png";
 import SoftStar from "../../../assets/img/soft-star.png";
 import TextCircle from "../../../assets/img/bn2-text.png";
-import Banner2Thumb from "../../../assets/img/banner-2thumb.png"
+import Banner2Thumb from "../../../assets/img/banner-2thumb.png";
 
 const Hero = () => {
   return (
@@ -32,8 +32,56 @@ const Hero = () => {
             />
           </a>
         </div>
-        <div className="py-16">
-            <Image src={Banner2Thumb}/>
+        <div className="py-16 relative">
+          <Image src={Banner2Thumb} />
+          <ul className="flex flex-wrap gap-3 max-w-[500px] absolute bottom-24 left-10">
+            <li>
+              <a
+                className="flex gap-3 items-center bg-white-15 border border-white rounded-full px-6 py-3"
+                href="#"
+              >
+                <span className="text-white">Agile Advance</span>
+                <span className="icon-arrow-up-left2"></span>
+              </a>
+            </li>
+            <li>
+              <a
+                className="flex gap-3 items-center bg-white-15 border border-white rounded-full px-6 py-3"
+                href="#"
+              >
+                <span className="text-white">Real-Time Analytics</span>
+                <span className="icon-arrow-up-left2"></span>
+              </a>
+            </li>
+            <li>
+              <a
+                className="flex gap-3 items-center bg-white-15 border border-white rounded-full px-6 py-3"
+                href="#"
+              >
+                <span className="text-white">Innovative</span>
+                <span className="icon-arrow-up-left2"></span>
+              </a>
+            </li>
+            <li>
+              <a
+                className="flex gap-3 items-center bg-white-15 border border-white rounded-full px-6 py-3"
+                href="#"
+              >
+                <span className="text-white">Business</span>
+                <span className="icon-arrow-up-left2"></span>
+              </a>
+            </li>
+          </ul>
+          <div className="max-w-[438px] absolute top-20 right-40">
+            <p className="mb-4">
+              Bring to the table win-win survival strategies to ensure proactive
+              domination. At the end of the day.
+            </p>
+            <a className="font-bold flex items-center gap-3 border-b border-black inline-flex" href="#">
+              <span>Discover More</span>
+              <span className="icon-arrow-up-left2"></span>
+            </a>
+          </div>
         </div>
       </div>
     </div>
