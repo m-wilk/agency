@@ -39,9 +39,9 @@ const Header = () => {
             <span className="icon-search"></span>
           </a>
         </div>
-        <div className="rounded-full h-[3rem] w-[3rem] bg-black-90 flex items-center justify-center">
+        <button className="rounded-full h-[3rem] w-[3rem] bg-black-90 flex items-center justify-center">
           <span className="icon-menu text-3xl"></span>
-        </div>
+        </button>
       </div>
     </div>
   );
