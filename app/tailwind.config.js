@@ -23,6 +23,7 @@ module.exports = {
       },
       backgroundImage: {
         "grid-yellow": "url('/src/assets/img/hero-v2bg.png')",
+        "pattern-black": "url('/src/assets/img/team-bg.png')",
       },
     },
   },

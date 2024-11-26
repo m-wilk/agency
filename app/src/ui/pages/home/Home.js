@@ -3,6 +3,8 @@ import Hero from "../../organism/hero/Hero";
 import About from "../../organism/about/About";
 import Services from "../../organism/services/Services";
 import Projects from "../../organism/projects/Projects";
+import Team from "../../organism/team/Team";
+import Testimonial from "../../organism/testimonial/Testimonial";
 
 const Home = () => {
   return (
@@ -12,6 +14,8 @@ const Home = () => {
       <About />
       <Services />
       <Projects />
+      <Team />
+      <Testimonial />
     </>
   );
 };
