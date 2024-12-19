@@ -1,7 +1,36 @@
+import { useState, useEffect } from "react";
+import axios from "axios";
 import Image from "../../atoms/image/Image";
 import Staff1 from "../../../assets/img/04.jpg";
 
-const Team = () => {
+const STYLE_MODE = {
+  cyrcyle: {
+    imageClassName: "rounded-full w-60 h-60 object-cover",
+    imageWrapperClassName: "p-10",
+    textWrapperClassName: "border-b border-gray-600",
+    ulClassName: "visible"
+  },
+  square: 
+  {
+    imageClassName: "w-full",
+    imageWrapperClassName: "",
+    textWrapperClassName: "",
+    ulClassName: "hidden"
+  },
+};
+
+const Team = ({ mode = "cyrcyle" }) => {
+  const [dataStuffs, setDataStuffs] = useState([]);
+  useEffect(() => {
+    axios
+      .get("http://localhost:7010/api/v1/creative-staff")
+      .then((response) => {
+        setDataStuffs(response.data);
+      });
+  }, []);
+
+  const { imageClassName, imageWrapperClassName,textWrapperClassName, ulClassName} = STYLE_MODE[mode];
+
   return (
     <div className="bg-pattern-black py-24">
       <div className="container">
@@ -23,162 +52,49 @@ const Team = () => {
           </a>
         </div>
         <div className="grid grid-cols-4 gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          <div className="bg-gray-900 p-10 flex flex-col items-center gap-4">
-            <Image
-              className="w-60 h-60 rounded-full object-cover"
-              src={Staff1}
-            />
-            <div className="text-white border-b border-gray-600 pb-4">
-              <a className="flex flex-col items-center" href="#">
-                <h6 className="text-2xl">Leslie Alexander</h6>
-                <span className="text-gray-400">Programmer</span>
-              </a>
-            </div>
-            <ul className="flex items-center gap-3">
-              <li>
-                <a>
-                  <span className="icon-facebook text-gray-600 text-2xl"></span>
-                </a>
-              </li>
-              <li>
-                <a>
-                  <span className="icon-instagram text-gray-600 text-2xl"></span>
-                </a>
-              </li>
-              <li>
-                <a>
-                  <span className="icon-linkedin2  text-gray-600 text-2xl"></span>
-                </a>
-              </li>
-              <li>
-                <a>
-                  <span className="icon-twitter text-gray-600 text-2xl"></span>
-                </a>
-              </li>
-              <li>
-                <a>
-                  <span className="icon-pinterest2 text-gray-600 text-2xl"></span>
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div className="bg-gray-900 p-10 flex flex-col items-center gap-4">
-            <Image
-              className="w-60 h-60 rounded-full object-cover"
-              src={Staff1}
-            />
-            <div className="text-white border-b border-gray-600 pb-4">
-              <a className="flex flex-col items-center" href="#">
-                <h6 className="text-2xl">Leslie Alexander</h6>
-                <span className="text-gray-400">Programmer</span>
-              </a>
-            </div>
-            <ul className="flex items-center gap-3">
-              <li>
-                <a>
-                  <span className="icon-facebook text-gray-600 text-2xl"></span>
-                </a>
-              </li>
-              <li>
-                <a>
-                  <span className="icon-instagram text-gray-600 text-2xl"></span>
-                </a>
-              </li>
-              <li>
-                <a>
-                  <span className="icon-linkedin2  text-gray-600 text-2xl"></span>
-                </a>
-              </li>
-              <li>
-                <a>
-                  <span className="icon-twitter text-gray-600 text-2xl"></span>
-                </a>
-              </li>
-              <li>
-                <a>
-                  <span className="icon-pinterest2 text-gray-600 text-2xl"></span>
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div className="bg-gray-900 p-10 flex flex-col items-center gap-4">
-            <Image
-              className="w-60 h-60 rounded-full object-cover"
-              src={Staff1}
-            />
-            <div className="text-white border-b border-gray-600 pb-4">
-              <a className="flex flex-col items-center" href="#">
-                <h6 className="text-2xl">Leslie Alexander</h6>
-                <span className="text-gray-400">Programmer</span>
-              </a>
-            </div>
-            <ul className="flex items-center gap-3">
-              <li>
-                <a>
-                  <span className="icon-facebook text-gray-600 text-2xl"></span>
-                </a>
-              </li>
-              <li>
-                <a>
-                  <span className="icon-instagram text-gray-600 text-2xl"></span>
-                </a>
-              </li>
-              <li>
-                <a>
-                  <span className="icon-linkedin2  text-gray-600 text-2xl"></span>
-                </a>
-              </li>
-              <li>
-                <a>
-                  <span className="icon-twitter text-gray-600 text-2xl"></span>
-                </a>
-              </li>
-              <li>
-                <a>
-                  <span className="icon-pinterest2 text-gray-600 text-2xl"></span>
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div className="bg-gray-900 p-10 flex flex-col items-center gap-4">
-            <Image
-              className="w-60 h-60 rounded-full object-cover"
-              src={Staff1}
-            />
-            <div className="text-white border-b border-gray-600 pb-4">
-              <a className="flex flex-col items-center" href="#">
-                <h6 className="text-2xl">Leslie Alexander</h6>
-                <span className="text-gray-400">Programmer</span>
-              </a>
-            </div>
-            <ul className="flex items-center gap-3">
-              <li>
-                <a>
-                  <span className="icon-facebook text-gray-600 text-2xl"></span>
-                </a>
-              </li>
-              <li>
-                <a>
-                  <span className="icon-instagram text-gray-600 text-2xl"></span>
-                </a>
-              </li>
-              <li>
-                <a>
-                  <span className="icon-linkedin2  text-gray-600 text-2xl"></span>
-                </a>
-              </li>
-              <li>
-                <a>
-                  <span className="icon-twitter text-gray-600 text-2xl"></span>
-                </a>
-              </li>
-              <li>
-                <a>
-                  <span className="icon-pinterest2 text-gray-600 text-2xl"></span>
-                </a>
-              </li>
-            </ul>
-          </div>
+          {dataStuffs.map((dataStuff) => {
+            return (
+              <div className={`bg-strong-dark-gray  flex flex-col items-center gap-4 ${imageWrapperClassName}`}>
+                <Image
+                  className={` ${imageClassName}`}
+                  src={Staff1}
+                />
+                <div className={`text-white pb-4 ${textWrapperClassName}`}>
+                  <a className="flex flex-col items-center" href="#">
+                    <h6 className="text-2xl">{dataStuff.Name}</h6>
+                    <span className="text-gray-400">{dataStuff.JobTitle}</span>
+                  </a>
+                </div>
+                <ul className={`flex items-center gap-3 ${ulClassName}`} >
+                  <li>
+                    <a>
+                      <span className="icon-facebook text-gray-600 text-2xl"></span>
+                    </a>
+                  </li>
+                  <li>
+                    <a>
+                      <span className="icon-instagram text-gray-600 text-2xl"></span>
+                    </a>
+                  </li>
+                  <li>
+                    <a>
+                      <span className="icon-linkedin2  text-gray-600 text-2xl"></span>
+                    </a>
+                  </li>
+                  <li>
+                    <a>
+                      <span className="icon-twitter text-gray-600 text-2xl"></span>
+                    </a>
+                  </li>
+                  <li>
+                    <a>
+                      <span className="icon-pinterest2 text-gray-600 text-2xl"></span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>
